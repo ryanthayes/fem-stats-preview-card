@@ -1,0 +1,137 @@
+/*=== CUSTOM VARIABLES ===*/
+
+:root {
+    --clr-primary-400: hsl(233, 47%, 7%);
+    --clr-accent-400-alpha: ;
+    --clr-primary-500: hsl(244, 38%, 16%);
+
+    --clr-accent-400: hsl(277, 64%, 61%);
+    --clr-accent-400-alpha: hsl(277, 64%, 61%, .6);
+
+    --clr-neutral-100: hsl(0, 0%, 100%); /* main heading, stats */
+    --clr-neutral-100-alpha75: hsla(0, 0%, 100%, 0.75); /* main paragraph */
+    --clr-neutral-100-alpha60: hsla(0, 0%, 100%, 0.6); /* stat headings */
+
+    --ff-body: 'Inter', sans-serif;
+    --ff-headings: 'Lexend Deca', sans-serif;
+
+    --fs-400: .9325rem;
+    --fs-600: 1.5rem;
+
+    --fw-normal: 400;
+    --fw-semi-bold: 600;
+}
+
+/*=== CUSTOM RESET ===*/
+
+/* makes sizing simpler */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+
+/* html {
+  color-scheme: dark light;
+} */
+
+/* min body height */
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/*=== GLOBAL STYLES ===*/
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-normal);
+    color: var(--clr-neutral-100-alpha60);
+    text-align: center;
+    background-color: var(--clr-primary-400);
+
+    display: grid;
+    align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+.card {
+  max-width: 18rem;
+  background-color: var(--clr-primary-500);
+  border-radius: .5rem;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.img-container {
+  position: relative;
+}
+.img-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-accent-400-alpha);
+}
+.card__title {
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-neutral-100);
+}
+.card__title span {
+  color: var(--clr-accent-400);
+}
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.8rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 1rem;
+  font-size: var(--fs-600);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-neutral-100);
+}
+.card__footer p {
+  font-family: var(--ff-headings);
+  font-size: .625rem;
+  font-weight: var(--fw-normal);
+  text-transform: uppercase;
+  color: var(--clr-neutral-100-alpha60);
+  margin-bottom: 1rem;
+}
